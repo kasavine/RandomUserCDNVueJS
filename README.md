@@ -1,6 +1,6 @@
-First Steps in Vue JS
+##First Steps in Vue JS
 
-# RandomUser
+### RandomUser
 
 Simple Vue JS application using CDN
 
@@ -9,23 +9,45 @@ Simple Vue JS application using CDN
 ```
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> 
 ```
-3. Create your app variable in js and mount it.
+3. Scrip to your app.js
+```
+<script src="app.js"></script>
+```
+4. Create your app variable in js and mount it.
 ```
 const app = Vue.createApp({
     template: '<h1>Hello World</h1>'
 })
 app.mount('#app')
 ```
-4. To use data - create a function and it should return the object
+5. To use data - create a function and it should return the object
 ```
 const app = Vue.createApp({
-    template: '<h1>Hello {{firstName}}</h1>',
     data(){
         return {
-            firstName: 'John'
+            firstName: 'First Name',
+            lastName: 'Last Name',
+            email: 'first.last@gmail.com',
+            gender: 'female',
+            picture: 'https://randomuser.me/api/portraits/women/10.jpg'
         }
     }
 })
 ```
-* V-BIND --> v-bind:src, v-bind:alt, v-bind:class
-* V-ON --> v-on:click
+6. Add method getUser() to app, fetching data from the API randomuser.me/api
+```
+methods: {
+        async getUser(){
+            const res = await fetch("https://randomuser.me/api");
+            const {results} = await res.json();
+            this.firstName = results[0].name.first;
+            this.lastName = results[0].name.last;
+            this.email = results[0].email;
+            this.gender = results[0].gender;
+            this.picture = results[0].picture.large;
+        }
+    }
+```
+
+* **V-BIND** --> v-bind:src, v-bind:alt, v-bind:class
+* **V-ON** --> v-on:click
