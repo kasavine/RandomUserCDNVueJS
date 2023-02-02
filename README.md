@@ -1,24 +1,28 @@
-# RandomUser
-### Simple Vue JS application using CDN
+# Random User
+
+This project is a simple Vue.js application that fetches a random user from an API (randomuser.me/api) and displays the user's information on the screen.
+
+### Project Setup - CDN
+This is simple one page app, you don't need to install anything.
+Clone the project and run index.html
+
+### Built With
+* Vue.js
+* CSS (styling)
 
 ![Alt Text](random_user.gif)
 
-1. Create files 
-* index.html
-* style.css
-* app.js
+### Notes
 
-2. Add CDN script in body tag
+1. **Generate** the following files: index.html, style.css, app.js
+
+2. Include both the **CDN script** and the **app script** within the body tag.
 ```
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> 
-```
-
-3. Scrip to your app.js
-```
 <script src="app.js"></script>
 ```
 
-4. Create your app variable in js and mount it.
+3. Declare an app variable in your JavaScript file and mount it.
 ```
 const app = Vue.createApp({
     ...
@@ -26,7 +30,7 @@ const app = Vue.createApp({
 app.mount('#app')
 ```
 
-5. To use data - create a function and it should return the object
+4. To access data, create a function that returns an object.
 ```
 const app = Vue.createApp({
     data(){
@@ -41,7 +45,7 @@ const app = Vue.createApp({
 })
 ```
 
-6. Add method getUser() to app, fetching data from the API randomuser.me/api
+5. Include a method called "getUser()" in your app and use it to retrieve data.
 ```
 methods: {
         async getUser(){
@@ -55,6 +59,3 @@ methods: {
         }
     }
 ```
-
-* **V-BIND** --> v-bind:src, v-bind:alt, v-bind:class
-* **V-ON** --> v-on:click
