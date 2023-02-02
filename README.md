@@ -1,6 +1,7 @@
 ##First Steps in Vue JS
 
 ### RandomUser
+![Alt Text](output.gif)
 
 Simple Vue JS application using CDN
 
