@@ -1,33 +1,38 @@
-##First Steps in Vue JS
+# RandomUser
+### Simple Vue JS application using CDN
 
-### RandomUser
-![Alt Text](output.gif)
+![Alt Text](random_user.gif)
 
-Simple Vue JS application using CDN
+1. Create files 
+* index.html
+* style.css
+* app.js
 
-1. Create files - index.html, style.css, app.js
 2. Add CDN script in body tag
 ```
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> 
 ```
+
 3. Scrip to your app.js
 ```
 <script src="app.js"></script>
 ```
+
 4. Create your app variable in js and mount it.
 ```
 const app = Vue.createApp({
-    template: '<h1>Hello World</h1>'
+    ...
 })
 app.mount('#app')
 ```
+
 5. To use data - create a function and it should return the object
 ```
 const app = Vue.createApp({
     data(){
         return {
-            firstName: 'First Name',
-            lastName: 'Last Name',
+            firstName: 'First',
+            lastName: 'Last',
             email: 'first.last@gmail.com',
             gender: 'female',
             picture: 'https://randomuser.me/api/portraits/women/10.jpg'
@@ -35,6 +40,7 @@ const app = Vue.createApp({
     }
 })
 ```
+
 6. Add method getUser() to app, fetching data from the API randomuser.me/api
 ```
 methods: {
